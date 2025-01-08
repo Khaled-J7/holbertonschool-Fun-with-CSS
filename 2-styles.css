@@ -1,0 +1,70 @@
+.toggle {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hide the default checkbox */
+.toggle-cb{
+    opacity: 0;
+    position: absolute;
+}
+
+/* The base toggle style : Makes the pill-shaped background*/
+.toggle-label {
+    display: block;
+    width: 100px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* The sliding circle */
+.toggle-switch {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: transform 0.3s;
+}
+
+/* The text container */
+.toggle-inner {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+/* Text styling */
+.toggle-inner::after {
+    content: "No";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* When checkbox is checked */
+.toggle-cb:checked + .toggle-label .toggle-inner {
+    background: #e4163a;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+    transform: translateX(60px);
+    border-color: #e4163a;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner::after {
+    content: "Yes";
+    left: 15px;
+    right: auto;
+    color: white;
+}
